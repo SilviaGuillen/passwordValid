@@ -8,13 +8,13 @@ public class passwordValidatorTest{
     @Test
     public void testPasswordLength() {
         // Test with a password of length 8
-        assertTrue(passwordValidator.isValidPassword("abcdefgh"));
+        assertTrue(passwordValidator.isValidPassword("Abcd5fgh"));
 
         // Test with a password of length 7
         assertFalse(passwordValidator.isValidPassword("abcdefg"));
 
         // Test with a password of length 9
-        assertTrue(passwordValidator.isValidPassword("abcdefghi"));
+        assertTrue(passwordValidator.isValidPassword("Abcdefgh9"));
 
         // Test with an empty password
         assertFalse(passwordValidator.isValidPassword(""));

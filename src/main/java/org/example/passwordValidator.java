@@ -7,7 +7,7 @@ public class passwordValidator {
     // Method to check if a password meets various criteria
     public static boolean isValidPassword(String password) {
         // Check if password is at least 8 characters long
-        if (password.length() < 8) {
+        if (password.length() <= 7) {
             return false;
         }
         // Check if password contains at least one digit
@@ -27,7 +27,7 @@ public class passwordValidator {
             }
 
             // If all criteria are met, return true
-            if (containsDigit && containsUppercase && containsLowercase) {
+            if (containsDigit && containsUppercase && containsLowercase && !containsWeakPasswords(password)) {
                 return true;
             }
         }
@@ -37,11 +37,11 @@ public class passwordValidator {
 
     // Method to detect commonly used passwords
     public static boolean isCommonPassword(String password) {
-        // List of commonly used passwords
+
         HashSet<String> commonPasswords = new HashSet<>();
         commonPasswords.add("password");
         commonPasswords.add("123456");
-        // Add more common passwords as needed
+
 
         return commonPasswords.contains(password);
     }
